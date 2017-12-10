@@ -10,7 +10,7 @@
     "precommit": "lint-staged && yarn prepare",
     "contrib": "./scripts/contrib.sh",
     "changelog":
-      "github-changes -o holvonix-open -r json2array -n latest --order-semver && prettier --write CHANGELOG.md",
+      "github-changes -o holvonix-open -r json2array -n latest --order-semver --use-commit-body && prettier --write CHANGELOG.md",
     "tidy": "yarn contrib && yarn changelog",
     "prepare": "yarn lint && yarn build && yarn test"
   },
@@ -32,7 +32,7 @@
     "Holvonix LLC and the json2array AUTHORS <sourcecode@holvonix.com> (https://github.com/holvonix-open/json2array)",
   "contributors": [
     "See https://github.com/holvonix-open/json2array/blob/master/AUTHORS",
-    "See https://github.com/holvonix-open/json2array/blob/master/CONTRIBUTORS"
+    "See https://github.com/holvonix-open/json2array/graphs/contributors"
   ],
   "files": [
     "lib/",
