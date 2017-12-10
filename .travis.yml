@@ -6,21 +6,19 @@ node_js:
 - '6'
 - '5'
 - '4'
-
 sudo: false
 before_install:
-  - curl -o- -L https://yarnpkg.com/install.sh | bash -s -- --version 1.3.2
-  - export PATH=$HOME/.yarn/bin:$PATH
+- curl -o- -L https://yarnpkg.com/install.sh | bash -s -- --version 1.3.2
+- export PATH=$HOME/.yarn/bin:$PATH
+- yarn global add greenkeeper-lockfile@1
 cache:
   yarn: true
   directories: []
-
-# Just download dependencies.
 install: yarn install --ignore-scripts
-# Run tests here.
+before_script: greenkeeper-lockfile-update
 script: yarn
-
-# Update the changelog and contributors before pushing to npm.
+# Should run only on the 'node' build
+after_script: greenkeeper-lockfile-upload
 before_deploy: yarn tidy
 deploy:
   provider: npm
@@ -33,3 +31,6 @@ deploy:
     tags: true
     branch: master
     repo: holvonix-open/json2array
+env:
+  global:
+    secure: o65Km+xly84qErkw+PVgfYBQ7wSreOqSnI/7jfO37AEK+vj5AX9TldZS7LtGiDw2QcmsY8o/hQ6j5QJACZjNRrplCs+3hz32upxyfmO4uMKCd3IIP97OsdORaQwnsgZvtyRncPfYNmvxjIgLMEjKjHD1riwTs7nY6pbBEl4WJ3GpO2fDkPVtPexlCs97tg9VZsTlr6zk0us+ztZJNwOxtNlfzErOvRpS7a/jxuJszoaGAcPRMxopEyu9UrDnFHU2/uxtcoTqWXn+y+cAaHGqR9udbQvex4eJuzYBYBneponZDi0ZA8h3nhp+4TNJ6qKUV80hkjYU1S99hrnnvXB7BAape7escVaPo5mx4TTtREwgC9jMNxv/9lBNvCZY5qEYw8sg7fOWPSNzD3geEURstqkhKo7+NqJ69hdIymmI2mWS4xH1OTe5CbzfJ6nlS5FxcWftqxSgkIM0wQJ4vRIlmoW5tFlOWWAcjPFZ6RLOyWpNcn5Gvtvh8Z5vPHu3/fcp6qvZ/LLr2Yrr/Hzda15smdYXpTrzVdttRnase9RUlXzN1i+ptYO4XS8HjyMItARW5YLAFZ5Ia/DhQvvZ6e4idTsN+oWy5BJ36YmBSevwVV7YKdy/W5bGnMqtWM4tkTjfU7dlwduCK+EpHEHDO+wHhq5EU9vFPaP9bXjKt/5dQfc=
