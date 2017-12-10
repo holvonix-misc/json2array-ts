@@ -5,20 +5,21 @@
   "main": "lib/index.js",
   "scripts": {
     "lint": "eslint src --fix",
-    "build": "yarn lint && babel src/ -d lib/",
-    "test": "yarn build && jest",
-    "precommit": "yarn prepare && lint-staged && yarn prepare",
+    "build": "babel src/ -d lib/",
+    "test": "jest",
+    "precommit": "lint-staged && yarn prepare",
     "contrib": "./scripts/contrib.sh",
     "changelog":
-      "github-changes -o holvonix-open -r json2array -n latest --order-semver",
+      "github-changes -o holvonix-open -r json2array -n latest --order-semver && yarn prettier --write CHANGELOG.md",
     "tidy": "yarn contrib && yarn changelog",
-    "prepare": "yarn test"
+    "prepare": "yarn lint && yarn build && yarn test"
   },
+  "keywords": ["csv", "json", "mapping", "transform", "arrays"],
   "lint-staged": {
     "src/**/*.{js,jsx}": ["prettier --parser flow --write", "git add"],
     "**/*.{json,md}": ["prettier --write", "git add"]
   },
-  "homepage": "https://github.com/holvonix/json2array",
+  "homepage": "https://github.com/holvonix/json2array#readme",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/holvonix/json2array.git"

@@ -6,3 +6,7 @@ node_js:
   - "6"
   - "5"
   - "4"
+
+install: yarn install --no-scripts
+
+script: yarn install

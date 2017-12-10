@@ -1,5 +1,10 @@
 ## Change Log
 
+### latest (2017/12/10 20:08 +00:00)
+
+* [f1040ad](https://github.com/holvonix-open/json2array/commit/f1040ad24ab18317bc0f5231eabda847649c4f0e) Attempt to get travis working (@holvonixAdvay)
+* [b12e03b](https://github.com/holvonix-open/json2array/commit/b12e03bc4cc03e42c06c02cc187e5bfa8b1f30dd) Readme; move to holvonix-open (@holvonixAdvay)
+
 ### v1.0.0 (2017/12/10 11:27 +00:00)
 
 * [19b0808](https://github.com/holvonix-open/json2array/commit/19b08086cc98496a08c0d7076f5347bfee4aadf9) v1.0.0 (@holvonixAdvay)
