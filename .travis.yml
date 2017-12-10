@@ -13,7 +13,7 @@ install: yarn install --ignore-scripts
 script: yarn
 
 # Update the changelog and contributors before pushing to npm.
-before_deploy: yarn tidy
+before_deploy: yarn --verbose tidy
 deploy:
   provider: npm
   email: github-external-bot@holvonix.com

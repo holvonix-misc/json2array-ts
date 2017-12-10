@@ -1,6 +1,6 @@
 {
   "name": "json2array",
-  "version": "1.0.1",
+  "version": "1.0.2-SNAPSHOT",
   "description": "Transforms JS objects to arrays",
   "main": "lib/index.js",
   "scripts": {
@@ -10,8 +10,9 @@
     "precommit": "lint-staged && yarn prepare",
     "contrib": "./scripts/contrib.sh",
     "changelog":
-      "github-changes -o holvonix-open -r json2array -n latest --order-semver && yarn prettier --write CHANGELOG.md",
-    "tidy": "yarn contrib && yarn changelog",
+      "github-changes -o holvonix-open -r json2array -n latest --order-semver",
+    "pretty": "prettier --write CHANGELOG.md",
+    "tidy": "yarn contrib && yarn changelog && yarn pretty",
     "prepare": "yarn lint && yarn build && yarn test"
   },
   "keywords": ["csv", "json", "mapping", "transform", "arrays"],

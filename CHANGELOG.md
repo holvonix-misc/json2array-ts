@@ -1,7 +1,8 @@
 ## Change Log
 
-### latest (2017/12/10 20:59 +00:00)
+### v1.0.1 (2017/12/10 20:59 +00:00)
 
+* [dd9c70f](https://github.com/holvonix-open/json2array/commit/dd9c70f051e17e1a4069bf1dc18fbe53b4ea5fb8) v1.0.1 (@holvonixAdvay)
 * [f77ed68](https://github.com/holvonix-open/json2array/commit/f77ed68be7e7182b8dd6e3d34ac5447cdc6f8cef) Travis push to NPM (@holvonixAdvay)
 * [08a56d2](https://github.com/holvonix-open/json2array/commit/08a56d2e0b14c3012bbfd7eec2a6ee67c600505e) Typo - flag name for ignore-scripts in Travis (@holvonixAdvay)
 * [e6b3894](https://github.com/holvonix-open/json2array/commit/e6b3894de25a94953403191db22325b7484d5ebc) Cleanup the build process and CI (@holvonixAdvay)
