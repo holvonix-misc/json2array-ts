@@ -7,10 +7,10 @@
     "lint": "eslint src --fix",
     "build": "yarn lint && babel src/ -d lib/",
     "test": "yarn build && jest",
-    "contrib": "./scripts/contrib.sh",
     "precommit": "yarn prepare && lint-staged && yarn prepare",
+    "contrib": "./scripts/contrib.sh",
     "changelog": "github-changes -o holvonix -r json2array",
-    "tidy": "yarn changelog && yarn contrib",
+    "tidy": "yarn contrib && yarn changelog",
     "prepare": "yarn build && yarn test"
   },
   "lint-staged": {
