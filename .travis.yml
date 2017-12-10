@@ -21,15 +21,15 @@ install: yarn install --ignore-scripts
 script: yarn
 
 # Update the changelog and contributors before pushing to npm.
-before_deploy: yarn --verbose tidy
+before_deploy: yarn tidy
 deploy:
   provider: npm
   email: github-external-bot@holvonix.com
+  skip_cleanup: true
   api_key:
     secure: cgMVxqpZmFnvKfdxQgvs1l1hynavaZl0leh4jTCgtXegS/OhcAlFeBcpOplWHdoJWM2Kunpx9MvnEs/93JQAv6VwlyB7WBEOUg3fPTVw3GsXoRzuKcXVo07lzctjhqOwroKT0IwFSa5QmD6i0nu6Q+iCnKMLMSu1arpxXyHvVeCHQgO4nGohXWYZsCly7c1bYNGvNu4UksoGwl/aUo+XySP6CrTlyt4j0rmNXBvzUv6536XhNKzuu4W4tes+MUGC21DnwJCs0TlB2nwT8GK45hHuBmLWQ9pJ/sbDP0UsDdBXD2mLTP170s7KOCsJOFK6zJKsjfTww9r1AI1s33MPi7Xu9V28ynP8gRwgiGkimuK5zoAyJoEMUQfsaI+qIE4oVSwXLLoHP0Z4C82v0zol4/n+gvu6TWt+ao2HeCDhGv49yIr+4/OqvRNGdijH60bW4E6o15CJYHP1tmvz/q5vFLg24Ft2nsPnKWG+JspkAjsDJxYUNHnP9Dn4DsRx01nyC8F0Ud2PyiMl12xDLnKYmi/qFRx3u63mx0Vmp89lgZIHH75a596TDWJN4PmNZdiCGQ/K+UDbMBNgqcFiRKfJgUmj684BMVMdpN8+IykGrgqV392dU8/vyjpwTLgH536dM6eDkB4sRKKsU5H/sM/tPDczRuTAAs0g2kYZJDbdr4o=
   on:
     node: node
-    skip_cleanup: true
     tags: true
     branch: master
     repo: holvonix-open/json2array
