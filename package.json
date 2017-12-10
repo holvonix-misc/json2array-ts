@@ -1,6 +1,6 @@
 {
   "name": "json2array",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "Transforms JS objects to arrays",
   "main": "lib/index.js",
   "scripts": {
@@ -12,6 +12,9 @@
     "changelog":
       "github-changes -o holvonix-open -r json2array -n latest --order-semver --use-commit-body && prettier --write CHANGELOG.md",
     "tidy": "yarn contrib && yarn changelog",
+    "changelog-ci":
+      "github-changes -o holvonix-open -r json2array -n latest --order-semver --use-commit-body --token $GH_RO_TOKEN && prettier --write CHANGELOG.md",
+    "tidy-ci": "yarn contrib && yarn changelog-ci",
     "prepare": "yarn lint && yarn build && yarn test"
   },
   "engines": {
