@@ -1,6 +1,6 @@
 {
   "name": "json2array",
-  "version": "1.0.4",
+  "version": "1.0.5-SNAPSHOT",
   "description": "Transforms JS objects to arrays",
   "main": "lib/index.js",
   "scripts": {
@@ -23,16 +23,33 @@
     "src/**/*.{js,jsx}": ["prettier --parser flow --write", "git add"],
     "**/*.{json,md}": ["prettier --write", "git add"]
   },
-  "homepage": "https://github.com/holvonix/json2array#readme",
+  "homepage": "https://github.com/holvonix-open/json2array#readme",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/holvonix/json2array.git"
+    "url": "git+https://github.com/holvonix-open/json2array.git"
   },
   "author":
-    "Holvonix LLC and the json2array AUTHORS <sourcecode@holvonix.com> (https://github.com/holvonix/json2array)",
+    "Holvonix LLC and the json2array AUTHORS <sourcecode@holvonix.com> (https://github.com/holvonix-open/json2array)",
   "contributors": [
-    "See https://github.com/holvonix/json2array/blob/master/AUTHORS",
-    "See https://github.com/holvonix/json2array/blob/master/CONTRIBUTORS"
+    "See https://github.com/holvonix-open/json2array/blob/master/AUTHORS",
+    "See https://github.com/holvonix-open/json2array/blob/master/CONTRIBUTORS"
+  ],
+  "files": [
+    "lib/",
+    "CHANGELOG.md",
+    "package.json",
+    "LICENSE",
+    "AUTHORS",
+    "NOTICE",
+    "README.md",
+    "CONTRIBUTORS",
+    ".flowconfig",
+    ".babelrc",
+    ".eslintrc.json",
+    ".npmignore",
+    ".gitignore",
+    ".travis.yml",
+    "yarn.lock"
   ],
   "license": "Apache-2.0",
   "private": false,
