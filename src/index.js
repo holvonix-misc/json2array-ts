@@ -16,8 +16,21 @@ limitations under the License.
 
 // @flow
 
-function map2array(objs: any[], spec: string[]) {
-  return objs.map(v => spec.map(k => v[k]));
+function dottedGet(obj: { string: any } | any, spec: string) {
+  if (spec === "") {
+    return obj;
+  }
+  const dot = spec.indexOf(".");
+  const next = dot === -1 ? "" : spec.substring(dot + 1, spec.length);
+  const part = dot === -1 ? spec : spec.substr(0, dot);
+  return dottedGet(obj[part], next);
 }
 
-module.exports = map2array;
+function map2array(objs: any[], spec: string[]) {
+  return objs.map(v => spec.map(k => dottedGet(v, k)));
+}
+
+module.exports = {
+  dottedGet,
+  map2array
+};

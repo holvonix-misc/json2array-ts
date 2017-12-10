@@ -14,15 +14,56 @@ See the License for the specific language governing permissions and
 limitations under the License.
 */
 
-const map2array = require("./index");
+const json2array = require("./index");
 
-test("it gets a top-level property", () => {
-  expect(map2array([{ a: "b", c: 1 }], ["a"])).toEqual([["b"]]);
+test("dottedGet gets the object", () => {
+  expect(json2array.dottedGet({ a: "b", c: 1 }, "")).toEqual({ a: "b", c: 1 });
 });
 
-test("it gets a top-level property from many objects", () => {
-  expect(map2array([{ a: "b", c: 1 }, { a: "dd", c: 1 }], ["a"])).toEqual([
-    ["b"],
-    ["dd"]
+test("dottedGet gets a top-level property", () => {
+  expect(json2array.dottedGet({ a: "b", c: 1 }, "a")).toEqual("b");
+  expect(json2array.dottedGet({ a: "b", c: 1 }, "a.")).toEqual("b");
+  expect(json2array.dottedGet({ a: "b", c: 1 }, "c")).toEqual(1);
+  expect(
+    json2array.dottedGet({ a: "b", c: 1, d: { z: "b", c: 1 } }, "d")
+  ).toEqual({ z: "b", c: 1 });
+});
+
+test("dottedGet gets a second-level property", () => {
+  expect(
+    json2array.dottedGet({ a: "b", c: 1, d: { z: "b", c: 1 } }, "d.z")
+  ).toEqual("b");
+  expect(
+    json2array.dottedGet({ a: "b", c: 1, d: { z: "b", c: 1 } }, "d.z.")
+  ).toEqual("b");
+  expect(
+    json2array.dottedGet({ a: "b", c: 1, d: { z: "b", c: 1 } }, "d.c.")
+  ).toEqual(1);
+});
+
+test("map2array gets a top-level property", () => {
+  expect(json2array.map2array([{ a: "b", c: 1 }], ["a"])).toEqual([["b"]]);
+});
+
+test("map2array gets a top-level property from many objects", () => {
+  expect(
+    json2array.map2array([{ a: "b", c: 1 }, { a: "dd", c: 1 }], ["a"])
+  ).toEqual([["b"], ["dd"]]);
+});
+
+test("map2array gets many deep property from many objects", () => {
+  expect(
+    json2array.map2array(
+      [
+        { a: "b3ioj3ior", c: 1, d: { z: "bmf mf", c: { z: "b", c: 1 } } },
+        { a: "b", c: "b94", d: { z: "bz", c: { z: "fkmef", c: 91 } } },
+        { a: "bij4", c: 293, d: { z: "b3", c: { z: "39", c: 13 } } }
+      ],
+      ["a", "d.z", "d.c.z", "d.c", "c"]
+    )
+  ).toEqual([
+    ["b3ioj3ior", "bmf mf", "b", { z: "b", c: 1 }, 1],
+    ["b", "bz", "fkmef", { z: "fkmef", c: 91 }, "b94"],
+    ["bij4", "b3", "39", { z: "39", c: 13 }, 293]
   ]);
 });

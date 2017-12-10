@@ -6,7 +6,7 @@
   "scripts": {
     "lint": "eslint src --fix",
     "build": "yarn lint && babel src/ -d lib/",
-    "test": "jest",
+    "test": "yarn build && jest",
     "contrib": "./scripts/contrib.sh",
     "precommit": "yarn prepare && lint-staged && yarn prepare",
     "changelog": "github-changes -o holvonix -r json2array",
