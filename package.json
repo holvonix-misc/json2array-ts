@@ -1,6 +1,6 @@
 {
   "name": "json2array",
-  "version": "1.0.0",
+  "version": "1.0.1-SNAPSHOT",
   "description": "Transforms JS objects to arrays",
   "main": "lib/index.js",
   "scripts": {
@@ -10,9 +10,9 @@
     "precommit": "yarn prepare && lint-staged && yarn prepare",
     "contrib": "./scripts/contrib.sh",
     "changelog":
-      "github-changes -o holvonix -r json2array -n latest --order-semver",
+      "github-changes -o holvonix-open -r json2array -n latest --order-semver",
     "tidy": "yarn contrib && yarn changelog",
-    "prepare": "yarn build && yarn test"
+    "prepare": "yarn test"
   },
   "lint-staged": {
     "src/**/*.{js,jsx}": ["prettier --parser flow --write", "git add"],
