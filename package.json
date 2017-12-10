@@ -1,0 +1,58 @@
+{
+  "name": "json2array",
+  "version": "0.0.1-SNAPSHOT",
+  "description": "Transforms JS objects to arrays",
+  "main": "lib/index.js",
+  "scripts": {
+    "lint": "eslint src --fix",
+    "build": "yarn lint && babel src/ -d lib/",
+    "test": "jest",
+    "contrib": "./scripts/contrib.sh",
+    "precommit": "yarn prepare && lint-staged && yarn prepare",
+    "changelog": "github-changes -o holvonix -r json2array",
+    "tidy": "yarn changelog && yarn contrib",
+    "prepare": "yarn build && yarn test"
+  },
+  "lint-staged": {
+    "src/**/*.{js,jsx}": ["prettier --parser flow --write", "git add"],
+    "**/*.{json,md}": ["prettier --write", "git add"]
+  },
+  "homepage": "https://github.com/holvonix/json2array",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/holvonix/json2array.git"
+  },
+  "author":
+    "Holvonix LLC and the json2array AUTHORS <sourcecode@holvonix.com> (https://github.com/holvonix/json2array)",
+  "contributors": [
+    "See https://github.com/holvonix/json2array/blob/master/AUTHORS",
+    "See https://github.com/holvonix/json2array/blob/master/CONTRIBUTORS"
+  ],
+  "license": "Apache-2.0",
+  "private": false,
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "6.26.0",
+    "babel-eslint": "8",
+    "babel-jest": "^21.2.0",
+    "babel-preset-flow": "^6.23.0",
+    "eslint": "^4.13.0",
+    "eslint-config-airbnb-base": "^12.1.0",
+    "eslint-config-prettier": "^2.9.0",
+    "eslint-plugin-flowtype": "^2.39.1",
+    "eslint-plugin-import": "^2.8.0",
+    "eslint-plugin-jest": "^21.4.2",
+    "eslint-plugin-prettier": "^2.3.1",
+    "flow-bin": "^0.61.0",
+    "git-contributors": "^0.2.3",
+    "github-changes": "^1.1.1",
+    "husky": "^0.14.3",
+    "jest-cli": "^21.2.1",
+    "lint-staged": "^6.0.0",
+    "prettier": "^1.9.1",
+    "semver": "^5.4.1"
+  },
+  "jest": {
+    "testEnvironment": "node"
+  }
+}
