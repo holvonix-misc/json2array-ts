@@ -1,6 +1,6 @@
 {
   "name": "json2array",
-  "version": "1.0.5-SNAPSHOT",
+  "version": "2.0.0-SNAPSHOT",
   "description": "Transforms JS objects to arrays",
   "main": "lib/index.js",
   "scripts": {
@@ -30,10 +30,7 @@
   },
   "author":
     "Holvonix LLC and the json2array AUTHORS <sourcecode@holvonix.com> (https://github.com/holvonix-open/json2array)",
-  "contributors": [
-    "See https://github.com/holvonix-open/json2array/blob/master/AUTHORS",
-    "See https://github.com/holvonix-open/json2array/graphs/contributors"
-  ],
+  "contributors": ["See AUTHORS file", "See CONTRIBUTORS file"],
   "files": [
     "lib/",
     "CHANGELOG.md",

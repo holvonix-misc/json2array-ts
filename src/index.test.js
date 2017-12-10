@@ -42,18 +42,31 @@ test("dottedGet gets a second-level property", () => {
 });
 
 test("map2array gets a top-level property", () => {
-  expect(json2array.map2array([{ a: "b", c: 1 }], ["a"])).toEqual([["b"]]);
+  expect(json2array.map2array({ a: "b", c: 1 }, ["a"])).toEqual(["b"]);
 });
 
-test("map2array gets a top-level property from many objects", () => {
+test("map2array gets many deep properties", () => {
   expect(
-    json2array.map2array([{ a: "b", c: 1 }, { a: "dd", c: 1 }], ["a"])
+    json2array.map2array(
+      { a: "b3ioj3ior", c: 1, d: { z: "bmf mf", c: { z: "b", c: 1 } } },
+      ["a", "d.z", "d.c.z", "d.c", "c"]
+    )
+  ).toEqual(["b3ioj3ior", "bmf mf", "b", { z: "b", c: 1 }, 1]);
+});
+
+test("maps2arrays gets a top-level property", () => {
+  expect(json2array.maps2arrays([{ a: "b", c: 1 }], ["a"])).toEqual([["b"]]);
+});
+
+test("maps2arrays gets a top-level property from many objects", () => {
+  expect(
+    json2array.maps2arrays([{ a: "b", c: 1 }, { a: "dd", c: 1 }], ["a"])
   ).toEqual([["b"], ["dd"]]);
 });
 
-test("map2array gets many deep property from many objects", () => {
+test("maps2arrays gets many deep properties from many objects", () => {
   expect(
-    json2array.map2array(
+    json2array.maps2arrays(
       [
         { a: "b3ioj3ior", c: 1, d: { z: "bmf mf", c: { z: "b", c: 1 } } },
         { a: "b", c: "b94", d: { z: "bz", c: { z: "fkmef", c: 91 } } },

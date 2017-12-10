@@ -1,11 +1,10 @@
 # json2array
 
+[![Build Status](https://travis-ci.org/holvonix-open/json2array.svg?branch=master)](https://travis-ci.org/holvonix-open/json2array)
+[![npm version](https://badge.fury.io/js/json2array.svg)](https://badge.fury.io/js/json2array)
 [![Greenkeeper badge](https://badges.greenkeeper.io/holvonix-open/json2array.svg)](https://greenkeeper.io/)
 
 Convert JSON to an array
-
-[![Build Status](https://travis-ci.org/holvonix-open/json2array.svg?branch=master)](https://travis-ci.org/holvonix-open/json2array)
-[![npm version](https://badge.fury.io/js/json2array.svg)](https://badge.fury.io/js/json2array)
 
 [![NPM](https://nodei.co/npm/json2array.png?compact=true)](https://nodei.co/npm/json2array/)
 
@@ -43,8 +42,11 @@ const obj2 = {
 // 'hello'
 json2array.dottedGet(obj1, "nested.deep.leaf");
 
+// [5, 'hello']
+json2array.map2array(obj1, ["top", "nested.deep.leaf"]);
+
 // [[5, 'hello'], ['a700', 'goodbye']]
-json2array.map2array([obj1, obj2], ["top", "nested.deep.leaf"]);
+json2array.maps2arrays([obj1, obj2], ["top", "nested.deep.leaf"]);
 ```
 
 ## Notice and License

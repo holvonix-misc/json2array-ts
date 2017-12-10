@@ -26,11 +26,16 @@ function dottedGet(obj: { string: any } | any, spec: string) {
   return dottedGet(obj[part], next);
 }
 
-function map2array(objs: any[], spec: string[]) {
-  return objs.map(v => spec.map(k => dottedGet(v, k)));
+function map2array(obj: any, spec: string[]) {
+  return spec.map(k => dottedGet(obj, k));
+}
+
+function maps2arrays(objs: any[], spec: string[]) {
+  return objs.map(v => map2array(v, spec));
 }
 
 module.exports = {
   dottedGet,
-  map2array
+  map2array,
+  maps2arrays
 };
