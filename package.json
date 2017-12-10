@@ -1,6 +1,6 @@
 {
   "name": "json2array",
-  "version": "2.0.0-SNAPSHOT",
+  "version": "2.0.0",
   "description": "Transforms JS objects to arrays",
   "main": "lib/index.js",
   "scripts": {
