@@ -1,5 +1,7 @@
 # json2array
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/holvonix-open/json2array.svg)](https://greenkeeper.io/)
+
 Convert JSON to an array
 
 [![Build Status](https://travis-ci.org/holvonix-open/json2array.svg?branch=master)](https://travis-ci.org/holvonix-open/json2array)
