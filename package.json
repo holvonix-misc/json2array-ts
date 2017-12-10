@@ -1,6 +1,6 @@
 {
   "name": "json2array",
-  "version": "0.0.1",
+  "version": "1.0.0-SNAPSHOT",
   "description": "Transforms JS objects to arrays",
   "main": "lib/index.js",
   "scripts": {
@@ -9,7 +9,8 @@
     "test": "yarn build && jest",
     "precommit": "yarn prepare && lint-staged && yarn prepare",
     "contrib": "./scripts/contrib.sh",
-    "changelog": "github-changes -o holvonix -r json2array",
+    "changelog":
+      "github-changes -o holvonix -r json2array -n latest --order-semver",
     "tidy": "yarn contrib && yarn changelog",
     "prepare": "yarn build && yarn test"
   },
