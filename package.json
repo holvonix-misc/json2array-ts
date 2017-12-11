@@ -1,6 +1,6 @@
 {
   "name": "json2array",
-  "version": "2.0.2",
+  "version": "2.0.3-SNAPSHOT",
   "description": "Transforms JS objects to arrays",
   "main": "lib/index.js",
   "scripts": {
@@ -76,6 +76,7 @@
     "semver": "^5.4.1"
   },
   "jest": {
-    "testEnvironment": "node"
+    "testEnvironment": "node",
+    "collectCoverage": true
   }
 }
