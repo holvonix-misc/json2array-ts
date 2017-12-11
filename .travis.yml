@@ -33,8 +33,7 @@ script:
 - cat ./coverage/lcov.info | coveralls
 - codecov -f coverage/coverage-final.json
 after_script: greenkeeper-lockfile-upload
-before_deploy: yarn tidy-ci
-deploy:
+npm_deploy: &npm_deploy
   provider: npm
   email: github-external-bot@holvonix.com
   skip_cleanup: true
@@ -45,6 +44,12 @@ deploy:
     tags: true
     branch: master
     repo: holvonix-open/json2array
+jobs:
+  include:
+    - stage: deploy
+      before_deploy: yarn tidy-ci
+      deploy:
+        <<: *npm_deploy
 env:
   global:
   - secure: o65Km+xly84qErkw+PVgfYBQ7wSreOqSnI/7jfO37AEK+vj5AX9TldZS7LtGiDw2QcmsY8o/hQ6j5QJACZjNRrplCs+3hz32upxyfmO4uMKCd3IIP97OsdORaQwnsgZvtyRncPfYNmvxjIgLMEjKjHD1riwTs7nY6pbBEl4WJ3GpO2fDkPVtPexlCs97tg9VZsTlr6zk0us+ztZJNwOxtNlfzErOvRpS7a/jxuJszoaGAcPRMxopEyu9UrDnFHU2/uxtcoTqWXn+y+cAaHGqR9udbQvex4eJuzYBYBneponZDi0ZA8h3nhp+4TNJ6qKUV80hkjYU1S99hrnnvXB7BAape7escVaPo5mx4TTtREwgC9jMNxv/9lBNvCZY5qEYw8sg7fOWPSNzD3geEURstqkhKo7+NqJ69hdIymmI2mWS4xH1OTe5CbzfJ6nlS5FxcWftqxSgkIM0wQJ4vRIlmoW5tFlOWWAcjPFZ6RLOyWpNcn5Gvtvh8Z5vPHu3/fcp6qvZ/LLr2Yrr/Hzda15smdYXpTrzVdttRnase9RUlXzN1i+ptYO4XS8HjyMItARW5YLAFZ5Ia/DhQvvZ6e4idTsN+oWy5BJ36YmBSevwVV7YKdy/W5bGnMqtWM4tkTjfU7dlwduCK+EpHEHDO+wHhq5EU9vFPaP9bXjKt/5dQfc=
