@@ -30,9 +30,12 @@ script:
 - cat ./coverage/lcov.info | coveralls
 - codecov -f coverage/coverage-final.json
 after_script: greenkeeper-lockfile-upload
+stages:
+  - name: deploy
+    if: "(tag =~ ^v) AND (branch = master) AND (fork = false) AND (repo = holvonix-open/json2array)"
 jobs:
   include:
-  - if: "(tag =~ ^v) AND (branch = master) AND (fork = false) AND (repo = holvonix-open/json2array)"
+  - # deploy
     stage: deploy
     before_deploy: yarn tidy-ci
     deploy:
