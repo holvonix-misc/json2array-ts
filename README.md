@@ -4,6 +4,8 @@
 [![npm version](https://badge.fury.io/js/json2array.svg)](https://badge.fury.io/js/json2array)
 [![Greenkeeper badge](https://badges.greenkeeper.io/holvonix-open/json2array.svg)](https://greenkeeper.io/)
 [![Coverage Status](https://coveralls.io/repos/github/holvonix-open/json2array/badge.svg?branch=master)](https://coveralls.io/github/holvonix-open/json2array?branch=master)
+[![codecov](https://codecov.io/gh/holvonix-open/json2array/branch/master/graph/badge.svg)](https://codecov.io/gh/holvonix-open/json2array)
+[![Maintainability](https://api.codeclimate.com/v1/badges/6217484ac553304f9e05/maintainability)](https://codeclimate.com/github/holvonix-open/json2array/maintainability)
 
 Convert JSON to an array
 
