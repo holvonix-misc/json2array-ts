@@ -14,7 +14,9 @@ before_install:
 cache: false
 install: yarn install --ignore-scripts
 before_script: greenkeeper-lockfile-update
-script: yarn
+script:
+- yarn
+- cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js
 after_script: greenkeeper-lockfile-upload
 before_deploy: yarn tidy-ci
 deploy:

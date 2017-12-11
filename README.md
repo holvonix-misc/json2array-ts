@@ -3,6 +3,7 @@
 [![Build Status](https://travis-ci.org/holvonix-open/json2array.svg?branch=master)](https://travis-ci.org/holvonix-open/json2array)
 [![npm version](https://badge.fury.io/js/json2array.svg)](https://badge.fury.io/js/json2array)
 [![Greenkeeper badge](https://badges.greenkeeper.io/holvonix-open/json2array.svg)](https://greenkeeper.io/)
+[![Coverage Status](https://coveralls.io/repos/github/holvonix-open/json2array/badge.svg?branch=master)](https://coveralls.io/github/holvonix-open/json2array?branch=master)
 
 Convert JSON to an array
 
