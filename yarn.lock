@@ -292,7 +292,7 @@ aws4@^1.2.1, aws4@^1.6.0:
   version "1.6.0"
   resolved "https://registry.yarnpkg.com/aws4/-/aws4-1.6.0.tgz#83ef5ca860b2b32e4a0deedee8c771b9db57471e"
 
-babel-cli@^6.26.0:
+babel-cli@6.26.0:
   version "6.26.0"
   resolved "https://registry.yarnpkg.com/babel-cli/-/babel-cli-6.26.0.tgz#502ab54874d7db88ad00b887a06383ce03d002f1"
   dependencies:
@@ -998,7 +998,7 @@ eslint-module-utils@^2.1.1:
     debug "^2.6.8"
     pkg-dir "^1.0.0"
 
-eslint-plugin-flowtype@^2.40.1:
+eslint-plugin-flowtype@^2.40.0:
   version "2.40.1"
   resolved "https://registry.yarnpkg.com/eslint-plugin-flowtype/-/eslint-plugin-flowtype-2.40.1.tgz#f78a8e6a4cc6da831dd541eb61e803ff0279b796"
   dependencies:
@@ -1041,9 +1041,9 @@ eslint-scope@^3.7.1:
     esrecurse "^4.1.0"
     estraverse "^4.1.1"
 
-eslint@^4.13.0:
-  version "4.13.0"
-  resolved "https://registry.yarnpkg.com/eslint/-/eslint-4.13.0.tgz#1991aa359586af83877bde59de9d41f53e20826d"
+eslint@^4.13.1:
+  version "4.13.1"
+  resolved "https://registry.yarnpkg.com/eslint/-/eslint-4.13.1.tgz#0055e0014464c7eb7878caf549ef2941992b444f"
   dependencies:
     ajv "^5.3.0"
     babel-code-frame "^6.22.0"
@@ -1997,7 +1997,7 @@ jest-changed-files@^21.2.0:
   dependencies:
     throat "^4.0.0"
 
-jest-cli@^21.2.1:
+jest-cli@21.2.1:
   version "21.2.1"
   resolved "https://registry.yarnpkg.com/jest-cli/-/jest-cli-21.2.1.tgz#9c528b6629d651911138d228bdb033c157ec8c00"
   dependencies:
@@ -2209,6 +2209,31 @@ jest-validate@^21.1.0, jest-validate@^21.2.1:
     jest-get-type "^21.2.0"
     leven "^2.1.0"
     pretty-format "^21.2.1"
+
+js-devbox@^1.0.2:
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/js-devbox/-/js-devbox-1.0.2.tgz#6596dddda1d2b9c7a2e771d331548ded0e84e4d2"
+  dependencies:
+    babel-cli "6.26.0"
+    babel-core "6.26.0"
+    babel-eslint "8"
+    babel-jest "^21.2.0"
+    babel-preset-flow "^6.23.0"
+    eslint "^4.13.1"
+    eslint-config-airbnb-base "^12.1.0"
+    eslint-config-prettier "^2.9.0"
+    eslint-plugin-flowtype "^2.40.0"
+    eslint-plugin-import "^2.8.0"
+    eslint-plugin-jest "^21.4.2"
+    eslint-plugin-prettier "^2.3.1"
+    flow-bin "^0.61.0"
+    git-contributors "^0.2.3"
+    github-changes "^1.1.1"
+    husky "^0.14.3"
+    jest-cli "21.2.1"
+    lint-staged "^6.0.0"
+    prettier "^1.9.1"
+    semver "^5.4.1"
 
 js-tokens@^3.0.0, js-tokens@^3.0.2:
   version "3.0.2"
