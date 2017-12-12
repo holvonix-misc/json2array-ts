@@ -1,5 +1,6 @@
 # json2array
 
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/7f39dc2b8a6d4b149fb18497ca6c9538)](https://www.codacy.com/app/holvonix-open/json2array?utm_source=github.com&utm_medium=referral&utm_content=holvonix-open/json2array&utm_campaign=badger)
 [![Build Status](https://travis-ci.org/holvonix-open/json2array.svg?branch=master)](https://travis-ci.org/holvonix-open/json2array)
 [![npm version](https://badge.fury.io/js/json2array.svg)](https://badge.fury.io/js/json2array)
 [![Greenkeeper badge](https://badges.greenkeeper.io/holvonix-open/json2array.svg)](https://greenkeeper.io/)
