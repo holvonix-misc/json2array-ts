@@ -3,7 +3,7 @@
 This product contains software originally developed by Holvonix LLC.
 Original Repository: https://github.com/holvonix-open/json2array
 
-Copyright (c) 2017 Holvonix LLC. All rights reserved.
+Copyright (c) 2017-2019 Holvonix LLC. All rights reserved.
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this software except in compliance with the License.
@@ -19,7 +19,12 @@ limitations under the License.
 
 Third-party dependencies may have their own licenses.
 
+This entire file serves as the NOTICE that must be included under
+Section 4d of the License.
 
+=====
+
+APACHE LICENSE, VERSION 2.0:
 
                                  Apache License
                            Version 2.0, January 2004
@@ -222,3 +227,4 @@ Third-party dependencies may have their own licenses.
    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
    See the License for the specific language governing permissions and
    limitations under the License.
+   

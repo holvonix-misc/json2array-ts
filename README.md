@@ -1,66 +1,35 @@
-# json2array
+# json2array - 
 
-[![Codacy Badge](https://api.codacy.com/project/badge/Grade/7f39dc2b8a6d4b149fb18497ca6c9538)](https://www.codacy.com/app/holvonix-open/json2array?utm_source=github.com&utm_medium=referral&utm_content=holvonix-open/json2array&utm_campaign=badger)
-[![Build Status](https://travis-ci.org/holvonix-open/json2array.svg?branch=master)](https://travis-ci.org/holvonix-open/json2array)
-[![npm version](https://badge.fury.io/js/json2array.svg)](https://badge.fury.io/js/json2array)
-[![Greenkeeper badge](https://badges.greenkeeper.io/holvonix-open/json2array.svg)](https://greenkeeper.io/)
-[![codecov](https://codecov.io/gh/holvonix-open/json2array/branch/master/graph/badge.svg)](https://codecov.io/gh/holvonix-open/json2array)
-[![Maintainability](https://api.codeclimate.com/v1/badges/6217484ac553304f9e05/maintainability)](https://codeclimate.com/github/holvonix-open/json2array/maintainability)
+[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](./LICENSE) ![npm](https://img.shields.io/npm/v/json2array.svg) [![Build Status](https://travis-ci.com/holvonix-open/json2array.svg?branch=master)](https://travis-ci.com/holvonix-open/json2array) [![GitHub last commit](https://img.shields.io/github/last-commit/holvonix-open/json2array.svg)](https://github.com/holvonix-open/json2array/commits) [![codecov](https://codecov.io/gh/holvonix-open/json2array/branch/master/graph/badge.svg)](https://codecov.io/gh/holvonix-open/json2array) [![Dependabot Status](https://api.dependabot.com/badges/status?host=github&repo=holvonix-open/json2array)](https://dependabot.com) [![DeepScan grade](https://deepscan.io/api/teams/XX/projects/YY/branches/ZZ/badge/grade.svg)](https://deepscan.io/dashboard#view=project&tid=XX&pid=YY&bid=ZZ) [![Code Style: Google](https://img.shields.io/badge/code%20style-google-blueviolet.svg)](https://github.com/google/gts)
 
-Convert JSON to an array
 
-[![NPM](https://nodei.co/npm/json2array.png?compact=true)](https://nodei.co/npm/json2array/)
+## Quick Start
 
-## Installation
+After `yarn add request json2array':
 
-    npm install json2array
+````typescript
+import { TODO } from 'json2array';
 
-or
+async function getIt() {
+  // TODO
+}
+````
 
-    yarn add json2array
 
-## Usage
+## License
 
-```js
-const json2array = require("json2array");
+Read the [LICENSE](LICENSE) for details.  
+The entire [NOTICE](NOTICE) file serves as the NOTICE that must be included under
+Section 4d of the License.
 
-const obj1 = {
-  top: 5,
-  nested: {
-    deep: {
-      leaf: "hello"
-    }
-  }
-};
+````
 
-const obj2 = {
-  top: "a700",
-  nested: {
-    deep: {
-      leaf: "goodbye"
-    }
-  }
-};
-
-// 'hello'
-json2array.dottedGet(obj1, "nested.deep.leaf");
-
-// [5, 'hello']
-json2array.map2array(obj1, ["top", "nested.deep.leaf"]);
-
-// [[5, 'hello'], ['a700', 'goodbye']]
-json2array.maps2arrays([obj1, obj2], ["top", "nested.deep.leaf"]);
-```
-
-## Notice and License
-
-```
 # json2array
 
 This product contains software originally developed by Holvonix LLC.
 Original Repository: https://github.com/holvonix-open/json2array
 
-Copyright (c) 2017 Holvonix LLC. All rights reserved.
+Copyright (c) 2017-2019 Holvonix LLC. All rights reserved.
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this software except in compliance with the License.
@@ -75,4 +44,5 @@ See the License for the specific language governing permissions and
 limitations under the License.
 
 Third-party dependencies may have their own licenses.
-```
+
+````
