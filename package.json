@@ -1,65 +1,74 @@
 {
   "name": "json2array",
-  "version": "3.0.0",
+  "version": "4.0.0",
   "description": "Transforms JS objects to arrays",
-  "main": "lib/index.js",
-  "scripts": {
-    "build": "yarn run clean && yarn babel src/ -d lib/",
-    "clean": "rm -rf lib",
-    "flow": "flow",
-    "lint": "eslint src",
-    "precommit": "lint-staged && yarn test",
-    "prepack": "yarn build",
-    "prepare": "yarn build",
-    "prepublishOnly": "yarn test",
-    "preversion": "yarn test",
-    "test": "yarn lint && yarn run flow && yarn build && yarn test-only",
-    "test-only": "jest",
-    "contrib": "./scripts/contrib.sh",
-    "tidy-ci": "yarn contrib"
-  },
-  "engines": {
-    "node": ">=4.0.0",
-    "yarn": "^1.3.2"
-  },
-  "keywords": ["csv", "json", "mapping", "transform", "arrays"],
-  "lint-staged": {
-    "src/**/*.{js,jsx}": ["prettier --parser flow --write", "git add"],
-    "**/*.{json,md}": ["prettier --write", "git add"]
-  },
-  "homepage": "https://github.com/holvonix-open/json2array#readme",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/holvonix-open/json2array.git"
+    "url": "https://github.com/holvonix-open/json2array.git"
   },
-  "author":
-    "Holvonix LLC and the json2array AUTHORS <sourcecode@holvonix.com> (https://github.com/holvonix-open/json2array)",
-  "contributors": ["See AUTHORS file", "See CONTRIBUTORS file"],
-  "files": [
-    "lib/",
-    "CHANGELOG.md",
-    "package.json",
-    "LICENSE",
-    "AUTHORS",
-    "NOTICE",
-    "README.md",
-    "CONTRIBUTORS",
-    ".flowconfig",
-    ".babelrc",
-    ".eslintrc.json",
-    ".npmignore",
-    ".gitignore",
-    ".travis.yml",
-    "yarn.lock"
+  "keywords": [
+    "csv", "json", "mapping", "transform", "arrays"
   ],
-  "license": "Apache-2.0",
-  "private": false,
-  "devDependencies": {
-    "js-devbox": "^5.0.0"
+  "engines": {
+    "node": "^10.15.3",
+    "yarn": "^1.12.3"
   },
-  "jest": {
-    "testEnvironment": "node",
-    "collectCoverage": true,
-    "coverageDirectory": "./coverage/"
+  "main": "build/src/index.js",
+  "types": "build/src/index.d.ts",
+  "files": [
+    "build/src/**/*.js",
+    "build/src/**/*.d.ts",
+    "LICENSE",
+    "NOTICE",
+    "README.md"
+  ],
+  "nyc": {
+    "extension": [
+      ".ts",
+      ".tsx"
+    ],
+    "exclude": [
+      "prettier.config.js",
+      "**/*.d.ts",
+      "test/**/*.*",
+      "build/**/**/*.js"
+    ],
+    "all": true
+  },
+  "author": "Holvonix LLC <sourcecode@holvonix.com> (https://github.com/holvonix-open/json2array)",
+  "license": "Apache-2.0",
+  "contributors": ["See AUTHORS file", "See CONTRIBUTORS file"],
+  "private": false,
+  "scripts": {
+    "t": "yarn fix && yarn test --grep='#slow' --invert",
+    "cleantests": "rm -rf *.lcov .nyc_output coverage",
+    "clean": "gts clean",
+    "start": "node index.js",
+    "debug": "node --inspect index.js",
+    "cleanstart": "yarn clean; yarn start",
+    "test": "nyc ts-mocha -p ./tsconfig.json 'test/**/*.ts'",
+    "test-coverage": "yarn clean && yarn test && yarn report-coverage",
+    "report-coverage": "nyc report --reporter=json && codecov -F unit -f coverage/*.json",
+    "lint": "yarn fix && yarn check",
+    "check": "gts check",
+    "compile": "tsc -p .",
+    "fix": "gts fix",
+    "prepare": "yarn clean && yarn check && yarn run compile",
+    "pretest": "yarn run compile",
+    "posttest": "yarn run check",
+    "preversion": "yarn test"
+  },
+  "dependencies": {
+  },
+  "devDependencies": {
+    "@types/mocha": "^5.2.5",
+    "@types/node": "^12.6.1",
+    "codecov": "^3.4.0",
+    "gts": "^1.0.0",
+    "mocha": "^6.1.4",
+    "nock": "^10.0.6",
+    "nyc": "^14.1.1",
+    "ts-mocha": "^6.0.0",
+    "typescript": "~3.5.0"
   }
 }
