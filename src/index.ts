@@ -2,7 +2,7 @@
 # json2array
 
 This product contains software originally developed by Holvonix LLC.
-Original Repository: https://github.com/holvonix-open/json2array
+Original Repository: https://github.com/holvonix-open/json2array-ts
 
 Copyright (c) 2017-2019 Holvonix LLC. All rights reserved.
 

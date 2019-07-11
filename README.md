@@ -1,18 +1,32 @@
 # json2array - 
 
-[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](./LICENSE) ![npm](https://img.shields.io/npm/v/json2array.svg) [![Build Status](https://travis-ci.com/holvonix-open/json2array.svg?branch=master)](https://travis-ci.com/holvonix-open/json2array) [![GitHub last commit](https://img.shields.io/github/last-commit/holvonix-open/json2array.svg)](https://github.com/holvonix-open/json2array/commits) [![codecov](https://codecov.io/gh/holvonix-open/json2array/branch/master/graph/badge.svg)](https://codecov.io/gh/holvonix-open/json2array) [![Dependabot Status](https://api.dependabot.com/badges/status?host=github&repo=holvonix-open/json2array)](https://dependabot.com) [![DeepScan grade](https://deepscan.io/api/teams/XX/projects/YY/branches/ZZ/badge/grade.svg)](https://deepscan.io/dashboard#view=project&tid=XX&pid=YY&bid=ZZ) [![Code Style: Google](https://img.shields.io/badge/code%20style-google-blueviolet.svg)](https://github.com/google/gts)
+[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](./LICENSE) ![npm](https://img.shields.io/npm/v/json2array.svg) [![Build Status](https://travis-ci.com/holvonix-open/json2array-ts.svg?branch=master)](https://travis-ci.com/holvonix-open/json2array-ts) [![GitHub last commit](https://img.shields.io/github/last-commit/holvonix-open/json2array-ts.svg)](https://github.com/holvonix-open/json2array-ts/commits) [![codecov](https://codecov.io/gh/holvonix-open/json2array-ts/branch/master/graph/badge.svg)](https://codecov.io/gh/holvonix-open/json2array-ts) [![Dependabot Status](https://api.dependabot.com/badges/status?host=github&repo=holvonix-open/json2array-ts)](https://dependabot.com) [![DeepScan grade](https://deepscan.io/api/teams/4465/projects/6282/branches/52048/badge/grade.svg)](https://deepscan.io/dashboard#view=project&tid=4465&pid=6282&bid=52048) [![Code Style: Google](https://img.shields.io/badge/code%20style-google-blueviolet.svg)](https://github.com/google/gts)
 
 
 ## Quick Start
 
-After `yarn add request json2array':
+After `yarn add json2array':
 
 ````typescript
-import { TODO } from 'json2array';
+import * as assert from 'assert';
+import * as json2array from 'json2array';
 
-async function getIt() {
-  // TODO
-}
+// Get many properties from many objects.
+assert.deepStrictEqual(
+  json2array.maps2arrays(
+    [
+      { a: 'b3ioj3ior', c: 1, d: { z: 'bmf mf', c: { z: 'b', c: 1 } } },
+      { a: 'b', c: 'b94', d: { z: 'bz', c: { z: 'fkmef', c: 91 } } },
+      { a: 'bij4', c: 293, d: { z: 'b3', c: { z: '39', c: 13 } } },
+    ],
+    ['a', 'd.z', 'd.c.z', 'd.c', 'c']
+  ),
+  [
+    ['b3ioj3ior', 'bmf mf', 'b', { z: 'b', c: 1 }, 1],
+    ['b', 'bz', 'fkmef', { z: 'fkmef', c: 91 }, 'b94'],
+    ['bij4', 'b3', '39', { z: '39', c: 13 }, 293],
+  ]
+);
 ````
 
 
@@ -27,7 +41,7 @@ Section 4d of the License.
 # json2array
 
 This product contains software originally developed by Holvonix LLC.
-Original Repository: https://github.com/holvonix-open/json2array
+Original Repository: https://github.com/holvonix-open/json2array-ts
 
 Copyright (c) 2017-2019 Holvonix LLC. All rights reserved.
 

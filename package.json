@@ -4,7 +4,7 @@
   "description": "Transforms JS objects to arrays",
   "repository": {
     "type": "git",
-    "url": "https://github.com/holvonix-open/json2array.git"
+    "url": "https://github.com/holvonix-open/json2array-ts.git"
   },
   "keywords": [
     "csv", "json", "mapping", "transform", "arrays"
@@ -35,9 +35,8 @@
     ],
     "all": true
   },
-  "author": "Holvonix LLC <sourcecode@holvonix.com> (https://github.com/holvonix-open/json2array)",
+  "author": "Holvonix LLC <sourcecode@holvonix.com> (https://github.com/holvonix-open/json2array-ts)",
   "license": "Apache-2.0",
-  "contributors": ["See AUTHORS file", "See CONTRIBUTORS file"],
   "private": false,
   "scripts": {
     "t": "yarn fix && yarn test --grep='#slow' --invert",
